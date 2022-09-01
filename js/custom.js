@@ -1,41 +1,29 @@
-var ctx = document.getElementById("myChart").getContext("2d");
 
-var myChart = new Chart(ctx, {
+const ctx = document.getElementById('myChart').getContext('2d');
+const chartObject = {
     type: 'bar',
-    // type: 'line',
-    // type: 'pie',
-    // type: 'doughnut',
-    // type: 'radar',
-    // type: 'polarArea',
     data: {
-        labels: ["HTML", "CSS", "JavaScript", "Bootstrap", "Tailwind", "JSDOM"],
-        datasets: [
-            {
-                data: [13, 15, 5, 10, 9, 10],
-                label: "Programming Languages",
-                backgroundColor: [
-                    "violet", "blue", "skyblue", "green", "orange", "red"
-                ],
-                borderWidth: 2,
-                borderColor: ['black']
-            },
-        ],
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: 'Learn Chart JS',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: ['red', 'blue', 'yellow', 'green', 'purple', 'orange'],
+            borderColor: ['black'],
+            borderWidth: 1
+        }]
     },
     options: {
-        responsive: false,
-        layout: {
-            padding: {
-                // left: 50,
-                // top: 20,
-            },
+        scales: {
+            y: {
+                beginAtZero: true
+            }
         },
-        tooltips: {
-            enabled: false,
-            backgroundColor: "red",
-        },
-        title: {
-            display: true,
-            text: 'Custom Chart Title',
-        },
-    },
-});
+        title: 'Something'
+    }
+};
+
+const myChart = new Chart(ctx, chartObject);
+
+/* 
+
+*/
